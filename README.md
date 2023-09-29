@@ -15,6 +15,10 @@ $ npm run start
 
 # generate static project
 $ npm run generate
+
+# pour lancer le serveur json 
+$json-server --watch db.json
+# ou suivre la doc https://www.npmjs.com/package/json-server
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
