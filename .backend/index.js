@@ -1,0 +1,6 @@
+module.exports.carts = require('./carts.js')
+module.exports.users = require('./users.js')
+module.exports.posts = require('./posts.js')
+module.exports.todos = require('./todos.js')
+module.exports.comments = require('./comments.js')
+module.exports.products = require('./products.js')
