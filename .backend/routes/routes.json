@@ -1,0 +1,18 @@
+{
+  "/posts": "/posts?_expand=user",
+  "/posts?*": "/posts?$1&_expand=user",
+  "/posts/:id": "/posts/:id?_expand=user",
+  "/posts/:id?*": "/posts/:id?$1&_expand=user",
+  "/todos": "/todos?_expand=user",
+  "/todos?*": "/todos?$1&_expand=user",
+  "/todos/:id": "/todos/:id?_expand=user",
+  "/todos/:id?*": "/todos/:id?$1&_expand=user",
+  "/carts": "/carts?_expand=user",
+  "/carts?*": "/carts?$1&_expand=user",
+  "/carts/:id": "/carts/:id?_expand=user",
+  "/carts/:id?*": "/carts/:id?$1&_expand=user",
+  "/comments": "/comments?_expand=user&_expand=post",
+  "/comments?*": "/comments?$1&_expand=user&_expand=post",
+  "/comments/:id": "/comments/:id?_expand=user&_expand=post",
+  "/comments/:id?*": "/comments/:id?$1&_expand=user&_expand=post"
+}
