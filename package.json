@@ -6,6 +6,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
+    "back": "json-server --routes .backend/routes/routes.json --watch json-server.config.js --port 5000",
     "generate": "nuxt generate"
   },
   "dependencies": {
