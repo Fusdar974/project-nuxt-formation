@@ -1,4 +1,5 @@
-import colors from 'vuetify/es5/util/colors'
+import colors from 'vuetify/lib/util/colors'
+import vuetify, {transformAssetUrls} from 'vite-plugin-vuetify'
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -35,11 +36,18 @@ export default {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify',
+    '@nuxtjs/vuetify'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    //https://vuetifyjs.com/en/getting-started/installation/#using-nuxt-3
+    (_options, nuxt) => {
+      nuxt.hooks.hook('vite:extendConfig', (config) => {
+        // @ts-expect-error
+        config.plugins.push(vuetify({autoImport: true}))
+      })
+    }
   ],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
@@ -49,19 +57,26 @@ export default {
       dark: true,
       themes: {
         dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
+          primary: colors.blue.darken,
+          accent: colors.grey.darken,
+          secondary: colors.amber.darken,
+          info: colors.teal.lighten,
           warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3
+          error: colors.deepOrange.accent,
+          success: colors.green.accent
         }
       }
     }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
+  build: {},
+  //https://vuetifyjs.com/en/getting-started/installation/#using-nuxt-3
+  vite: {
+    vue: {
+      template: {
+        transformAssetUrls
+      }
+    }
   }
 }
